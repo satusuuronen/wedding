@@ -1,0 +1,28 @@
+#main-menu-right a:hover {
+    color: #7e7e7e;
+}
+
+.page-header {
+    margin-top: 40px;
+}
+
+#copyright {
+    text-align: center;
+    color: #7e7e7e;
+    font-size: 10px;
+}
+
+.remove_booking {
+    margin-left: 20px;
+    float: right;
+}
+
+.booked {
+    color: #CCCCCC;
+}
+
+.header_picture {
+    margin-top: 70px;
+}
+
+

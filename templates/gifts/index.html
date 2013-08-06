@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <title>Wedding</title>
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Wedding</h1>
+        </div>
+        <h4>Log in</h4>
+        <form method='post' action='.'>{% csrf_token %}
+        <!-- display the form fields -->
+        {{ form.as_p }}
+
+        <!-- submit button -->
+       <input type='submit' value='ok'>
+    </form>
+    <hr>
+    <footer id="footer">
+        <p id="copyright">Copyright © 2013 Satu Suuronen </p>
+    </footer>
+    </div>    
+</body>
+</html>
+

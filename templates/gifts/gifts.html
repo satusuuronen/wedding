@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<head>
+    <title>Wedding</title>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/styles.css">
+    <script src="{{ STATIC_URL }}lib/jquery-1.8.3.min.js"></script>
+    <script src="{{ STATIC_URL }}lib/underscore-min.js"></script>
+    <script src="{{ STATIC_URL }}lib/backbone-min.js"></script>   
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">We</a>
+                <ul class="nav pull-right" id="main-menu-right">
+                    <li>
+                    <a href="/gifts/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>                    
+    </div>
+    
+
+    <div class="container">
+        <div class="header_picture">
+         <img src="" alt="">
+        </div> 
+        <section id="topography">
+            <div class="page-header">   
+                <h2>Gift list</h2>
+            </div>
+        </section>
+        <p>
+        </p>
+        <hr>
+        <div id="gift_container">
+        
+        </div>
+        <hr>
+        <footer id="footer">
+            <p id="copyright">Copyright © 2013 Satu Suuronen </p>
+        </footer>
+    </div>
+    <!-- Templates -->
+    <script type="text/template" id="gift_listing">
+            <% description = description.replace("\r\n", "<br>"); %>
+            <% if (booker==='mine') { %>
+                <div class="mine">
+                    <h4><%= title %></h4>
+                    <p><%= description %></p>
+                    <em>Your booking</em>
+                    <button class="remove_booking save btn btn-small">Cancel booking</button>
+                </div>
+                <hr>
+            <%  } 
+            else if (booker.length === 0) { %>
+                <div class="free">
+                    <h4><%= title %></h4>
+                    <p><%= description %></p>
+                    <button class="save btn btn-small">Book</button>
+                </div>
+                <hr> 
+            <%  }
+            else {%>
+                <div class="booked">
+                    <h4><%= title %></h4>
+                    <p><%= description %></p>
+                    <em>Booked</em>
+                </div>
+                <hr>
+            <% } %>
+
+    </script>
+    <!-- JavaScript -->
+    <script src="{{ STATIC_URL }}js/wedding.js"></script>    
+</body>
+</html>
+
